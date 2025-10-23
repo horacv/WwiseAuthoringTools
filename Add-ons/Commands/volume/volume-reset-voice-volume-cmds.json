@@ -1,0 +1,83 @@
+{
+	"version": 2,
+	"commands": [
+		{
+			"id":"ak.reset-voice-volume.a.only-selection",
+			"displayName":"A. Reset Voice Vol",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.reset-voice-volume.b.include-descendants",
+			"displayName":"B. Reset Voice Vol + Descendants",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py --include_all_descendants True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.reset-voice-volume.c.compensate-with-gain-only-selection",
+			"displayName":"C. Reset Voice Vol + Compensate with Gain",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py --compensate_with_gain True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.reset-voice-volume.d.compensate-with-gain-include-descendants",
+			"displayName":"D. Reset Voice Vol + Descendants + Compensate with Gain",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py --include_all_descendants True --compensate_with_gain True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.reset-voice-volume.e.gain-only-selection",
+			"displayName":"E. Reset Gain",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py --reset_makeup_gain_only True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.reset-voice-volume.f.gain-only-include-descendants",
+			"displayName":"F. Reset Gain + Descendants",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/Volume/volume-reset-voice-volume.py --reset_makeup_gain_only True --include_all_descendants True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Volume"
+			},
+			"redirectOutputs":false
+		}
+	]
+}

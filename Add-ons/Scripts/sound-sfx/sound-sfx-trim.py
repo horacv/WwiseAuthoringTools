@@ -13,7 +13,6 @@
 # It's accessed by commands in this file:
 
 ## Add-ons/Commands/sound-sfx/sound-sfx-trim-cmds.json
-
 #============================================================================================================#
 
 from dataclasses import dataclass

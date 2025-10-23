@@ -1,9 +1,22 @@
 {
 	"version": 2,
 	"commands": [
+        {
+			"id":"ak.trim-audio-files.a.reset-all",
+			"displayName":"A. Reset all SFXs trims",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
+			"args":"${WwiseProjectAddons}/Scripts/sound-sfx/sound-sfx-trim.py --reset_all True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/Sound SFX/Trim"
+			},
+			"redirectOutputs":false
+		},
 		{
-			"id":"ak.trim-audio-files-m54dB-beginAndEnd",
-			"displayName":"Trim Sound SFXs, threshold -54dB, begin and end with fades",
+			"id":"ak.trim-audio-files.b.m54dB-beginAndEnd",
+			"displayName":"B. Trim SFXs, thresh -54dB, fade begin and end",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
@@ -15,8 +28,8 @@
 			"redirectOutputs":false
 		},
 		{
-			"id":"ak.trim-audio-files-m54dB-beginAndEnd-with-Delay",
-			"displayName":"Trim Sound SFXs, threshold -54dB, begin and end with fades and Init Delay",
+			"id":"ak.trim-audio-files.c.m54dB-beginAndEnd-with-Delay",
+			"displayName":"C. Trim SFXs, thresh -54dB, fade begin and end + init delay",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
@@ -28,8 +41,8 @@
 			"redirectOutputs":false
 		},
 		{
-			"id":"ak.trim-audio-files-m54dB-only-begin-with-fade",
-			"displayName":"Trim Sound SFXs, threshold -54dB, begin with fade",
+			"id":"ak.trim-audio-files.d.m54dB-only-begin-with-fade",
+			"displayName":"D. Trim SFXs, thresh -54dB, fade begin",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
@@ -41,8 +54,8 @@
 			"redirectOutputs":false
 		},
 		{
-			"id":"ak.trim-audio-files-m54dB-only-begin-with-fade-with-Delay",
-			"displayName":"Trim Sound SFXs, threshold -54dB, begin with fade and Init Delay",
+			"id":"ak.trim-audio-files.e.m54dB-only-begin-with-fade-with-Delay",
+			"displayName":"E. Trim SFXs, thresh -54dB, fade begin + init delay",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
@@ -54,25 +67,12 @@
 			"redirectOutputs":false
 		},
 		{
-			"id":"ak.trim-audio-files-m54dB-only-end-with-fade",
-			"displayName":"Trim Sound SFXs, threshold -54dB, end with fade",
+			"id":"ak.trim-audio-files.f.m54dB-only-end-with-fade",
+			"displayName":"F. Trim SFXs, thresh -54dB, fade end",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
 			"args":"${WwiseProjectAddons}/Scripts/sound-sfx/sound-sfx-trim.py --reset_preprocess True --fade_begin 0.0 --no_trim_begin True",
-			"cwd":"",
-			"contextMenu":{
-				"basePath":"Wwise Tools/Sound SFX/Trim"
-			},
-			"redirectOutputs":false
-		},
-		{
-			"id":"ak.trim-reset-all",
-			"displayName":"Reset All Sound SFXs Trims",
-			"defaultShortcut":"",
-			"program":"py",
-			"startMode":"MultipleSelectionSingleProcessSpaceSeparated",
-			"args":"${WwiseProjectAddons}/Scripts/sound-sfx/sound-sfx-trim.py --reset_all True",
 			"cwd":"",
 			"contextMenu":{
 				"basePath":"Wwise Tools/Sound SFX/Trim"
