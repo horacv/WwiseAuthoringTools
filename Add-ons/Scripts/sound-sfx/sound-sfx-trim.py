@@ -15,7 +15,6 @@
 ## Add-ons/Commands/sound-sfx/sound-sfx-trim-cmds.json
 #============================================================================================================#
 
-from dataclasses import dataclass
 from scipy.io import wavfile
 from waapi import WaapiClient, CannotConnectToWaapiException
 import argparse
@@ -24,6 +23,9 @@ import numpy as np
 
 # CONSTANTS
 
+WAAPI_ALLOW_EXCEPTIONS : bool = True
+WAAPI_URL : str = "ws://127.0.0.1:8080/waapi"
+
 MAX_INT32 = 2147483647
 MAX_INT16 = 32767
 DECIBEL_TO_LINEAR_MULTIPLIER = 0.05
@@ -31,19 +33,6 @@ DEFAULT_FADE_DURATION = 0.004
 DEFAULT_THRESHOLD_DB = -54
 
 # CONFIG
-
-@dataclass
-class ProcessingConfig:
-    """Configuration for audio file processing."""
-    reset_preprocess: bool
-    reset_all: bool
-    threshold_begin_linear: float
-    threshold_end_linear: float
-    no_trim_begin: bool
-    no_trim_end: bool
-    fade_begin: float
-    fade_end: float
-    initial_delay: bool
 
 def parse_arguments() -> argparse.Namespace:
     """Parse command line arguments."""
@@ -85,7 +74,8 @@ def handle_py_asyncio_event_loop() -> asyncio.AbstractEventLoop:
 
 # Convert the threshold value from decibels to linear
 # dB to linear = 10^(db/20) or 10^(db*(1/20)) or 10^(db*0.05)
-get_threshold_value_linear = lambda db: pow(10, db * DECIBEL_TO_LINEAR_MULTIPLIER)
+def get_threshold_value_linear(db: float) -> float:
+    return pow(10, db * DECIBEL_TO_LINEAR_MULTIPLIER)
 
 def convert_sample_value_to_float(sample, data_type_name : str) -> float:
     """Convert the raw data to a single float value.
@@ -139,20 +129,9 @@ def main():
 
     try:
         # Waapi client connection
-        with (WaapiClient() as client):
+        with WaapiClient(WAAPI_URL, WAAPI_ALLOW_EXCEPTIONS) as client:
 
-            command_args = parse_arguments()
-            config = ProcessingConfig(
-                reset_preprocess=command_args.reset_preprocess,
-                reset_all=command_args.reset_all,
-                threshold_begin_linear=get_threshold_value_linear(command_args.threshold_begin),
-                threshold_end_linear=get_threshold_value_linear(command_args.threshold_end),
-                no_trim_begin=command_args.no_trim_begin,
-                no_trim_end=command_args.no_trim_end,
-                fade_begin=command_args.fade_begin,
-                fade_end=command_args.fade_end,
-                initial_delay=command_args.initial_delay
-            )
+            config = parse_arguments()
 
             # Get objects selected in the authoring tool
             selected_objects = client.call("ak.wwise.ui.getSelectedObjects")["objects"]
@@ -199,8 +178,8 @@ def main():
 
                     if not config.reset_all:
 
-                        trim_begin_sample: int = find_trim_sample(audio_data, begin_sample, end_sample, config.threshold_begin_linear)
-                        trim_end_sample: int = find_trim_sample(audio_data, end_sample, begin_sample, config.threshold_end_linear, reverse=True)
+                        trim_begin_sample: int = find_trim_sample(audio_data, begin_sample, end_sample, get_threshold_value_linear(config.threshold_begin))
+                        trim_end_sample: int = find_trim_sample(audio_data, end_sample, begin_sample, get_threshold_value_linear(config.threshold_end), reverse=True)
 
                         # Set the trim and fade properties in the source object
                         if (not config.no_trim_begin) and trim_begin_sample > begin_sample:

@@ -21,6 +21,9 @@ import asyncio
 
 # CONSTANTS
 
+WAAPI_ALLOW_EXCEPTIONS : bool = True
+WAAPI_URL : str = "ws://127.0.0.1:8080/waapi"
+
 MAKEUP_GAIN_MIN : int = -96
 MAKEUP_GAIN_MAX : int = 96
 
@@ -61,7 +64,7 @@ def main():
 
     try:
         # Waapi client connection
-        with WaapiClient() as client:
+        with WaapiClient(WAAPI_URL, WAAPI_ALLOW_EXCEPTIONS) as client:
 
             config = parse_arguments()
 
@@ -74,18 +77,14 @@ def main():
 
             for obj in selected_objects:
 
-                if config.include_all_descendants:
-                    # Get all objects that have their voice volume or makeup gain different from zero
-                    objects_to_compensate = client.call("ak.wwise.core.object.get",
-                                                        {
-                                                            "waql": f"$ \"{obj['id']}\" select descendants, this where {property_to_check} != 0"},
-                                                        options={"return": ["id", "Volume", "type", "MakeUpGain"]})["return"]
-                else:
-                    # Get only selected objects
-                    objects_to_compensate = client.call("ak.wwise.core.object.get",
-                                                        {
-                                                            "waql": f"$ \"{obj['id']}\" select this where {property_to_check} != 0"},
-                                                        options={"return": ["id", "Volume", "type", "MakeUpGain"]})["return"]
+                waql_query = (f"$ \"{obj['id']}\" select descendants, this where {property_to_check} != 0"
+                              if config.include_all_descendants else
+                              f"$ \"{obj['id']}\" select this where {property_to_check} != 0")
+
+                # Get all objects that have their voice volume or makeup gain different from zero
+                objects_to_compensate = client.call("ak.wwise.core.object.get",
+                                                    {"waql": waql_query},
+                                                    options={"return": ["id", "Volume", "type", "MakeUpGain"]})["return"]
 
                 # Process each found object
                 for obj_to_compensate in objects_to_compensate:
