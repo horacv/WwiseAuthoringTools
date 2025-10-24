@@ -32,7 +32,7 @@ MAKEUP_GAIN_MAX : int = 96
 def parse_arguments() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Reset Voice Volumes for selected objects, optionally compensating with make-up gain.'
+        description='Reset Voice Volumes for selected objects, optionally compensating with Makeup Gain.'
     )
     parser.add_argument('--reset_makeup_gain_only', const=1, default=False, type=bool, nargs='?'
                         , help='If true, only make-up gain will reset')

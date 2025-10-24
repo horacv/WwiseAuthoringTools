@@ -1,7 +1,9 @@
 
 # Wwise Authoring Tools
 
-A collection of tools and scripts for Wwise 
+A collection of tools and scripts for Wwise
+
+![Cover.png](Images/Cover.png)
 
 ## Overview
 

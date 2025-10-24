@@ -1,0 +1,175 @@
+{
+	"version": 2,
+	"commands": [
+		{
+			"id":"ak.show-all-descendants-in-list-view.a.sfx",
+			"displayName":"A. Show descendants in list view - SFX",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type Sound --additional-option IsVoice --additional-option-value False",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.b.voice",
+			"displayName":"B. Show descendants in list view - Voice",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type Sound --additional-option IsVoice --additional-option-value True",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.show-all-descendants-in-list-view.c.work-unit",
+			"displayName":"C. Show descendants in list view - Work Unit",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type WorkUnit",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.d.actor-mixer",
+			"displayName":"D. Show descendants in list view - Actor Mixer",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type ActorMixer",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.e.random-container",
+			"displayName":"E. Show descendants in list view - Sequence Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type RandomSequenceContainer --additional-option RandomOrSequence --additional-option-value 0",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+
+		},
+		{
+			"id":"ak.show-all-descendants-in-list-view.f.random-container",
+			"displayName":"F. Show descendants in list view - Random Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type RandomSequenceContainer --additional-option RandomOrSequence --additional-option-value 1",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.show-all-descendants-in-list-view.g.blend-container",
+			"displayName":"G. Show descendants in list view - Blend Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type BlendContainer",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+		{
+			"id":"ak.show-all-descendants-in-list-view.h.switch-container",
+			"displayName":"H. Show descendants in list view - Switch Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type SwitchContainer",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.i.music-track",
+			"displayName":"I. Show descendants in list view - Music Track",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type MusicTrack",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.j.music-segment",
+			"displayName":"J. Show descendants in list view - Music Segment",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type MusicSegment",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.k.music-playlist",
+			"displayName":"K. Show descendants in list view - Music Playlist Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type MusicPlaylistContainer",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.l.music-playlist",
+			"displayName":"L. Show descendants in list view - Music Switch Container",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type MusicSwitchContainer",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		},
+        {
+			"id":"ak.show-all-descendants-in-list-view.m.music-playlist",
+			"displayName":"L. Show descendants in list view - Folder",
+			"defaultShortcut":"",
+			"program":"py",
+			"startMode":"SingleSelectionSingleProcess",
+			"args":"${WwiseProjectAddons}/Scripts/list-view/list-view-show-descendants-of-type.py --type Folder",
+			"cwd":"",
+			"contextMenu":{
+				"basePath":"Wwise Tools/List View"
+			},
+			"redirectOutputs":false
+		}
+    ]
+}
