@@ -160,7 +160,7 @@
 		},
         {
 			"id":"ak.show-all-descendants-in-list-view.m.music-playlist",
-			"displayName":"L. Show descendants in list view - Folder",
+			"displayName":"M. Show descendants in list view - Folder",
 			"defaultShortcut":"",
 			"program":"py",
 			"startMode":"SingleSelectionSingleProcess",
