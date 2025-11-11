@@ -1,0 +1,7 @@
+/*
+*.idea
+*__pycache__
+!/Add-ons
+!/Images
+!readme.md
+!.gitignore

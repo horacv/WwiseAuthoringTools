@@ -1,0 +1,18 @@
+{
+	"version": 2,
+	"commands": [
+		{
+			"id":"ak.external-sources.a.update-sources-data-files-xml-json",
+			"displayName":"Update Sources Data Files (XML-JSON)",
+			"defaultShortcut":"",
+			"program":"py",
+			"args":"${WwiseProjectAddons}/Scripts/ext-sources/update-sources-data-files/main.py --wproject_root ${WwiseProjectRoot} --wproject_file ${WwiseProjectFile} --parser_script_dir ${WwiseProjectAddons}/ext-sources/update-sources-data-files --voices_dir ${WwiseProjectOriginals}/Voices --soundbanks_dir ${WwiseProjectRoot}/GeneratedSoundBanks --default_sources_json_file DefaultExtSourcesInfo.json --wconsole_dir ${WwiseInstallBin}/WwiseConsole --conversion_setting VO_ExtSource_Conv",
+			"cwd":"",
+			"mainMenu": {
+				"basePath":"Wwise Tools/External Sources"
+			},
+			"contextMenu": {},
+			"redirectOutputs":true
+		}
+	]
+}
