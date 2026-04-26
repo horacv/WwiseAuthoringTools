@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--CUSTOM PROPERTIES - Wwise Tools - Horacio Valdivieso -->
+<!--See https://www.audiokinetic.com/en/public-library/2025.1.7_9143/?source=SDK&id=defining_custom_properties.html -->
+<!--$ where @Sound:ProductionState = [value] -->
+<PluginModule>
+	<!--Only affects the Sound and SoundVoice object types -->
+	<WwiseObject Name="sound" CompanyID="1" PluginID="1">
+        <Properties>
+			<!--This custom property can be set or retrieved in waql or waapi using this name: @Sound:ProductionState-->
+			<Property Name="Sound:ProductionState" Type="int16" DisplayName="Production State">
+				<DefaultValue>0</DefaultValue>
+				<Restrictions>
+					<ValueRestriction>
+						<Enumeration Type="int16">
+							<Value DisplayName="Temp">0</Value>
+							<Value DisplayName="Not Reviewed">1</Value>
+							<Value DisplayName="Approved">2</Value>
+							<Value DisplayName="Final">3</Value>
+						</Enumeration>
+					</ValueRestriction>
+				</Restrictions>
+			</Property>
+        </Properties>
+    </WwiseObject>
+</PluginModule>

@@ -28,10 +28,12 @@ Alternatively, if your project is already open go to the top right search bar an
 <img alt="CommandReload.png" height="158" src="Images/CommandReload.png" width="550"/>
 
 \
-For more information and alternative ways to integrate these scripts, please see Wwise official documentation:
+For more information and alternative ways to integrate these scripts, commands, and custom properties, please see Wwise official documentation:
 
-https://www.audiokinetic.com/en/public-library/2024.1.9_8920/?source=SDK&id=waapi.html \
-https://www.audiokinetic.com/en/public-library/2024.1.9_8920/?source=SDK&id=defining_custom_commands.html
+https://www.audiokinetic.com/en/public-library/2025.1.7_9143/?source=SDK&id=waapi.html \
+https://www.audiokinetic.com/en/public-library/2025.1.7_9143/?source=SDK&id=defining_custom_commands.html \
+https://www.audiokinetic.com/en/public-library/2025.1.7_9143/?source=SDK&id=defining_custom_properties.html
+
 
 ### About Waapi network connections
 
