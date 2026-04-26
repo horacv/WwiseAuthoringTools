@@ -4,7 +4,7 @@
 If you require new properties for different objects on your project, add one or several .XML files with a .wcustomproperties extension.
 The Wwise authoring tool will scan these on startup.
 
-![Cover.png](Images/CustomProperties_SoundProductionState.png)
+![Cover.png](../../Images/CustomProperties_SoundProductionState.png)
 
 \
 For more information and alternative ways to integrate these custom properties, please see Wwise official documentation:
